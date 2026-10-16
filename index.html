@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5c0f1f">
+  <title>CET-ESERVE | College of Engineering and Technology, TAU</title>
+  <meta name="description" content="CET-ESERVE: submit requests, suggestions, feedback and concerns to the CET Student Council, anonymously or with your name.">
+  <link rel="icon" type="image/png" href="assets/cet_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body data-view="home">
+  <div class="bg" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap bar glass">
+      <a class="brand" href="#home" aria-label="CET-ESERVE home">
+        <span class="logos">
+          <img src="assets/tau_logo.png" alt="" width="44" height="44">
+          <img src="assets/cet_logo.png" alt="" width="44" height="44">
+        </span>
+        <span class="org">
+          <strong>College of Engineering and Technology</strong>
+          <span>Tarlac Agricultural University</span>
+        </span>
+      </a>
+      <a class="btn btn-small btn-gold only-home" href="#form">Open form</a>
+      <a class="btn btn-small btn-ghost only-form" href="#home">Back to home</a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ========== LANDING PAGE ========== -->
+    <section id="view-home" class="view" aria-labelledby="hero-title">
+      <div class="wrap hero">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Official Student Service Platform</p>
+            <h1 id="hero-title">CET e-SERVE</h1>
+            <p class="fullname">Electronic Service: Request, Suggestion &amp; Feedback Form</p>
+            <p class="lead">CET e-SERVE provides students of the College of Engineering and Technology with a formal channel for submitting service requests, suggestions, feedback, and concerns to the CET Student Council. No account or login is required, and the disclosure of personal information is entirely voluntary.</p>
+            <div class="cta-row">
+              <a class="btn btn-gold btn-lg" id="getStarted" href="#form">Proceed to the Form</a>
+            </div>
+          </div>
+
+          <aside class="glass types" aria-labelledby="types-title">
+            <h2 id="types-title">Types of Submissions</h2>
+            <dl>
+              <div><dt>Service Request</dt><dd>Formal requests for assistance or services from the College.</dd></div>
+              <div><dt>Suggestion</dt><dd>Proposals to improve programs, facilities, or activities.</dd></div>
+              <div><dt>Feedback</dt><dd>Comments on existing services and student experiences.</dd></div>
+              <div><dt>Concern or Complaint</dt><dd>Matters that require attention or resolution.</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+
+      <div class="wrap cards3">
+        <article class="glass tile">
+          <svg class="ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          <h2>Anonymous Submission</h2>
+          <p>Students may submit anonymously. In such cases, no name or contact information is requested or recorded by this system.</p>
+        </article>
+        <article class="glass tile">
+          <svg class="ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+          <h2>Voluntary Disclosure</h2>
+          <p>Students who choose to identify themselves may provide as much or as little information as they wish. All contact fields are optional.</p>
+        </article>
+        <article class="glass tile">
+          <svg class="ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+          <h2>Authorized Review</h2>
+          <p>Submissions are accessible only to designated CET Student Council officers and authorized administrators.</p>
+        </article>
+      </div>
+
+      <div class="wrap">
+        <div class="glass fine">
+          <h2>Data Privacy Notice</h2>
+          <p>Anonymity under this system means that no identifying or contact information is requested or stored by the application. The website hosting platform may retain standard technical logs that are beyond the control of this form; accordingly, absolute anonymity cannot be guaranteed. All submissions are handled in accordance with the Data Privacy Act of 2012 (Republic Act No. 10173) and applicable university policies.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FORM PAGE ========== -->
+    <section id="view-form" class="view" hidden aria-labelledby="form-title">
+      <div class="wrap form-wrap">
+        <div class="card panel" id="formCard">
+          <h2 id="form-title" tabindex="-1">Submit a concern</h2>
+          <p class="hint">Takes about two minutes. No login needed. Fields marked <span class="req" aria-hidden="true">*</span><span class="sr"> with an asterisk</span> are required.</p>
+
+          <div class="progress" aria-live="polite">
+            <div class="progress-track" role="progressbar" aria-labelledby="progressText" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
+            <span id="progressText">0 of 5 required items completed</span>
+          </div>
+
+          <div id="formAlert" class="alert" role="alert" hidden></div>
+
+          <form id="eserveForm" novalidate>
+            <!-- Honeypot: real students never see or fill this -->
+            <div class="hp" aria-hidden="true">
+              <label for="website">Leave this field empty</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <!-- Step 1 -->
+            <section class="step" aria-labelledby="s1">
+              <h3 class="step-title" id="s1"><span class="num">1</span>What is this about?</h3>
+              <div class="grid2">
+                <div class="field">
+                  <label for="type">Submission type <span class="req" aria-hidden="true">*</span></label>
+                  <select id="type" name="type" required aria-describedby="type-err">
+                    <option value="">Select a type</option>
+                    <option>Service Request</option>
+                    <option>Suggestion</option>
+                    <option>Feedback</option>
+                    <option>Concern or Complaint</option>
+                    <option>Other</option>
+                  </select>
+                  <span class="err" id="type-err"></span>
+                </div>
+                <div class="field">
+                  <label for="category">Category <span class="req" aria-hidden="true">*</span></label>
+                  <select id="category" name="category" required aria-describedby="category-err">
+                    <option value="">Select a category</option>
+                    <option>Academic Concerns</option>
+                    <option>Student Services</option>
+                    <option>Facilities and Equipment</option>
+                    <option>Student Activities and Events</option>
+                    <option>Student Organization</option>
+                    <option>Information and Communication Technology</option>
+                    <option>Safety and Security</option>
+                    <option>Other</option>
+                  </select>
+                  <span class="err" id="category-err"></span>
+                </div>
+                <div class="field" id="typeOtherWrap" hidden>
+                  <label for="typeOther">Please specify the type <span class="optional">(optional)</span></label>
+                  <input type="text" id="typeOther" name="typeOther" maxlength="60" aria-describedby="typeOther-err" placeholder="e.g. Partnership proposal">
+                  <span class="err" id="typeOther-err"></span>
+                </div>
+                <div class="field" id="categoryOtherWrap" hidden>
+                  <label for="categoryOther">Please specify the category <span class="optional">(optional)</span></label>
+                  <input type="text" id="categoryOther" name="categoryOther" maxlength="60" aria-describedby="categoryOther-err" placeholder="e.g. Library services">
+                  <span class="err" id="categoryOther-err"></span>
+                </div>
+              </div>
+
+              <fieldset class="field">
+                <legend>How urgent is it? <span class="optional">(optional)</span></legend>
+                <div class="seg" role="radiogroup">
+                  <label><input type="radio" name="urgency" value="" checked><span>Not set</span></label>
+                  <label><input type="radio" name="urgency" value="Low"><span>Low</span></label>
+                  <label><input type="radio" name="urgency" value="Normal"><span>Normal</span></label>
+                  <label><input type="radio" name="urgency" value="High"><span>High</span></label>
+                </div>
+              </fieldset>
+
+              <div class="field">
+                <label for="subject">Subject <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="subject" name="subject" maxlength="120" autocomplete="off" enterkeyhint="next" required aria-describedby="subject-err" placeholder="A short title for your submission">
+                <span class="err" id="subject-err"></span>
+              </div>
+            </section>
+
+            <!-- Step 2 -->
+            <section class="step" aria-labelledby="s2">
+              <h3 class="step-title" id="s2"><span class="num">2</span>Tell us more</h3>
+              <div class="field">
+                <label for="message">Message or description <span class="req" aria-hidden="true">*</span></label>
+                <p class="tip" id="messageTip">Be specific: what happened or what you need, where, and when. Please do not include confidential or personal data.</p>
+                <textarea id="message" name="message" rows="5" autocomplete="off" enterkeyhint="enter" maxlength="2000" required aria-describedby="message-err message-count messageTip" placeholder="Write your message here"></textarea>
+                <div class="row-between">
+                  <span class="err" id="message-err"></span>
+                  <span class="count" id="message-count" aria-live="polite">0 / 2000</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Step 3 -->
+            <section class="step" aria-labelledby="s3">
+              <h3 class="step-title" id="s3"><span class="num">3</span>Who is submitting?</h3>
+              <fieldset class="field identity">
+                <legend class="sr">Personal Identity</legend>
+                <div class="choices">
+                  <label class="choice"><input type="radio" name="identity" value="anonymous" checked>
+                    <span><strong>Submit anonymously</strong><small>No name or contact details are requested or saved.</small></span></label>
+                  <label class="choice"><input type="radio" name="identity" value="identified">
+                    <span><strong>Identify myself</strong><small>Share as much or as little as you like.</small></span></label>
+                </div>
+              </fieldset>
+
+              <div id="contactBlock" class="contact" hidden>
+                <h4>Your details <span class="optional">(All optional)</span></h4>
+                <div class="grid3">
+                  <div class="field">
+                    <label for="fullName">Full name</label>
+                    <input type="text" id="fullName" name="fullName" maxlength="100" autocomplete="name" autocapitalize="words" enterkeyhint="next">
+                    <span class="err" id="fullName-err"></span>
+                  </div>
+                  <div class="field">
+                    <label for="program">Program</label>
+                    <select id="program" name="program" aria-describedby="program-err">
+                      <option value="">Prefer not to say</option>
+                      <option>BS Agricultural and Biosystems Engineering</option>
+                      <option>BS Geodetic Engineering</option>
+                      <option>BS Information Technology</option>
+                      <option>Other</option>
+                    </select>
+                    <span class="err" id="program-err"></span>
+                  </div>
+                  <div class="field" id="programOtherWrap" hidden>
+                    <label for="programOther">Please specify <span class="optional">(optional)</span></label>
+                    <input type="text" id="programOther" name="programOther" maxlength="100" aria-describedby="programOther-err" placeholder="Your program or department">
+                    <span class="err" id="programOther-err"></span>
+                  </div>
+                  <div class="field">
+                    <label for="yearLevel">Year level</label>
+                    <select id="yearLevel" name="yearLevel">
+                      <option value="">Prefer not to say</option>
+                      <option>1st Year</option>
+                      <option>2nd Year</option>
+                      <option>3rd Year</option>
+                      <option>4th Year</option>
+                      <option>5th Year or higher</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" maxlength="120" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" aria-describedby="email-err" placeholder="name@example.com">
+                    <span class="err" id="email-err"></span>
+                  </div>
+                  <div class="field">
+                    <label for="phone">Contact number</label>
+                    <input type="tel" id="phone" name="phone" maxlength="20" autocomplete="tel" inputmode="tel" enterkeyhint="done" aria-describedby="phone-err" placeholder="e.g. 09XX XXX XXXX">
+                    <span class="err" id="phone-err"></span>
+                  </div>
+                </div>
+                <p class="tip">Add an email or number only if you would like the Student Council to be able to follow up with you.</p>
+              </div>
+            </section>
+
+            <div class="field consent">
+              <label class="check"><input type="checkbox" id="privacy" name="privacy" aria-describedby="privacy-err">
+                <span>I understand that my submission will be recorded and reviewed by authorized CET personnel for handling and evaluation, in line with the Data Privacy Act of 2012 and university policy. <span class="req" aria-hidden="true">*</span></span></label>
+              <span class="err" id="privacy-err"></span>
+            </div>
+
+            <div class="actions">
+              <button type="submit" class="btn btn-block btn-gold" id="submitBtn">
+                <span class="spinner" aria-hidden="true"></span>
+                <span class="btn-label">Send submission</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card panel success" id="successCard" hidden tabindex="-1" aria-live="polite">
+        <div class="check-mark" aria-hidden="true">&#10003;</div>
+        <h2>Submission received</h2>
+        <p>Thank you. Your submission was saved and will be reviewed by authorized CET personnel.</p>
+        <dl class="receipt">
+          <div><dt>Reference number</dt><dd id="refNo" class="ref"></dd><button type="button" class="btn btn-small btn-copy" id="copyRef">Copy reference number</button></div>
+          <div><dt>Date and time received</dt><dd id="refTime"></dd></div>
+        </dl>
+        <p class="hint">Keep your reference number. Do not share it publicly.</p>
+        <button type="button" class="btn" id="againBtn">Submit another response</button>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>CET e-SERVE &middot; College of Engineering and Technology, Tarlac Agricultural University, Camiling, Tarlac</p>
+      <p>Handled according to the Data Privacy Act of 2012 (RA 10173) and applicable university policies.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=6"></script>
+</body>
+</html>
