@@ -9,7 +9,7 @@
   // ===========================
 
   var LIMITS = { subject: 120, message: 2000, fullName: 100, program: 100, typeOther: 60, categoryOther: 60, programOther: 100, email: 120, phone: 20 };
-  var MIN_MESSAGE = 5;
+  var MIN_MESSAGE = 10;
 
   var $ = function (id) { return document.getElementById(id); };
   var form = $('eserveForm');
@@ -212,9 +212,9 @@
     'Service Request': { subject: 'e.g. Request for laboratory equipment access', tip: 'State the service you need, where it is needed, and by when.' },
     'Suggestion': { subject: 'e.g. Extend library hours during exams', tip: 'Describe your idea and how it would help students.' },
     'Feedback': { subject: 'e.g. Feedback on the enrollment process', tip: 'Share what worked well and what could be improved.' },
-    'Concern or Complaint': { subject: 'e.g. Faulty ventilation in a classroom', tip: 'Include what happened, where, when, and who is affected. Please do not include passwords or sensitive details.' }
+    'Concern or Complaint': { subject: 'e.g. Faulty ventilation in a classroom', tip: 'Include what happened, where, when, and who is affected. Please do not include confidential or personal data.' }
   };
-  var DEFAULT_TIP = { subject: 'A short title for your submission', tip: 'Be specific: what happened or what you need, where, and when. Please do not include passwords or unrelated personal data.' };
+  var DEFAULT_TIP = { subject: 'A short title for your submission', tip: 'Be specific: what happened or what you need, where, and when. Please do not include confidential or personal data.' };
   function syncTips() {
     var t = TIPS[$('type').value] || DEFAULT_TIP;
     $('subject').placeholder = t.subject;
@@ -268,6 +268,27 @@
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(ref).then(function () { done('Copied'); }, function () { done('Press and hold the number to copy'); });
     } else { done('Press and hold the number to copy'); }
+  });
+
+  // Light/dark theme (only the preference is stored, never any form content)
+  var root = document.documentElement;
+  function applyTheme(t) { root.setAttribute('data-theme', t); $('themeToggle').setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false'); }
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem('cet-theme'); } catch (e) {}
+  applyTheme(savedTheme || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  $('themeToggle').addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('cet-theme', next); } catch (e) {}
+  });
+
+  // Type cards on the home page preselect the submission type
+  Array.prototype.forEach.call(document.querySelectorAll('[data-type]'), function (a) {
+    a.addEventListener('click', function () {
+      if (!$('successCard').hidden) $('againBtn').click();
+      $('type').value = a.getAttribute('data-type');
+      syncTips(); syncOther(); updateProgress();
+    });
   });
 
   // ===== Page views (landing <-> form) in one HTML file, driven by the URL hash =====
