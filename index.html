@@ -5,92 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#5c0f1f">
   <title>CET e-SERVE</title>
-  <meta name="description" content="CET e-SERVE: submit requests, suggestions, feedback and concerns to the CET Student Council.">
+  <meta name="description" content="CET-ESERVE: submit requests, suggestions, feedback and concerns to the CET Student Council, anonymously or with your name.">
   <link rel="icon" type="image/png" href="assets/cet_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body data-view="home">
-  <div class="bg" aria-hidden="true"></div>
   <a class="skip" href="#main">Skip to main content</a>
 
   <header class="site-header">
-    <div class="wrap bar glass">
-      <a class="brand" href="#home" aria-label="CET-ESERVE home">
-        <span class="logos">
-          <img src="assets/tau_logo.png" alt="" width="44" height="44">
-          <img src="assets/cet_logo.png" alt="" width="44" height="44">
-        </span>
-        <span class="org">
-          <strong>College of Engineering and Technology</strong>
-          <span>Tarlac Agricultural University</span>
+    <div class="wrap header-row">
+      <a class="brand" href="#home" aria-label="CET e-SERVE home">
+        <img class="logo" src="assets/tau_logo.png" alt="" width="44" height="44">
+        <img class="logo" src="assets/cet_logo.png" alt="" width="44" height="44">
+        <span class="brand-text">
+          <strong>CET e-SERVE</strong>
+          <small>College of Engineering and Technology</small>
         </span>
       </a>
-      <a class="btn btn-small btn-gold only-home" href="#form">Open form</a>
-      <a class="btn btn-small btn-ghost only-form" href="#home">Back to home</a>
-    </div>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">&#9680;</button>
+      
+  </div>
   </header>
 
   <main id="main" tabindex="-1">
 
     <!-- ========== LANDING PAGE ========== -->
     <section id="view-home" class="view" aria-labelledby="hero-title">
-      <div class="wrap hero">
-        <div class="hero-grid">
-          <div class="hero-copy">
+      <div class="hero">
+        <div class="wrap hero-grid">
+          <div>
             <p class="eyebrow">Official Student Service Platform</p>
             <h1 id="hero-title">CET e-SERVE</h1>
             <p class="fullname">Electronic Service: Request, Suggestion &amp; Feedback Form</p>
             <p class="lead">CET e-SERVE provides students of the College of Engineering and Technology with a formal channel for submitting service requests, suggestions, feedback, and concerns to the CET Student Council. No account or login is required, and the disclosure of personal information is entirely voluntary.</p>
-            <div class="cta-row">
-              <a class="btn btn-gold btn-lg" id="getStarted" href="#form">Proceed to the Form</a>
-            </div>
+            <a class="btn btn-gold btn-lg" id="getStarted" href="#form">Proceed to the Form</a>
           </div>
-
-          <aside class="glass types" aria-labelledby="types-title">
-            <h2 id="types-title">Types of Submissions</h2>
-            <dl>
-              <div><dt>Service Request</dt><dd>Formal requests for assistance or services from the College.</dd></div>
-              <div><dt>Suggestion</dt><dd>Proposals to improve programs, facilities, or activities.</dd></div>
-              <div><dt>Feedback</dt><dd>Comments on existing services and student experiences.</dd></div>
-              <div><dt>Concern or Complaint</dt><dd>Matters that require attention or resolution.</dd></div>
-            </dl>
+          <aside class="orgs" aria-labelledby="how-title">
+            <h2 class="orgs-title" id="how-title">How it works</h2>
+            <ol class="steps">
+              <li><strong>Complete the form</strong><span>Select the type and category, then describe your request, suggestion, or concern.</span></li>
+              <li><strong>Choose how to submit</strong><span>Submit anonymously, or provide your details. All contact information is optional.</span></li>
+              <li><strong>Receive a reference number</strong><span>Keep it for your records. Authorized CET personnel will review your submission.</span></li>
+            </ol>
           </aside>
         </div>
       </div>
 
-      <div class="wrap cards3">
-        <article class="glass tile">
-          <svg class="ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-          <h2>Anonymous Submission</h2>
-          <p>Students may submit anonymously. In such cases, no name or contact information is requested or recorded by this system.</p>
-        </article>
-        <article class="glass tile">
-          <svg class="ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
-          <h2>Voluntary Disclosure</h2>
-          <p>Students who choose to identify themselves may provide as much or as little information as they wish. All contact fields are optional.</p>
-        </article>
-        <article class="glass tile">
-          <svg class="ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
-          <h2>Authorized Review</h2>
-          <p>Submissions are accessible only to designated CET Student Council officers and authorized administrators.</p>
-        </article>
-      </div>
-
       <div class="wrap">
-        <div class="glass fine">
-          <h2>Data Privacy Notice</h2>
-          <p>Anonymity under this system means that no identifying or contact information is requested or stored by the application. The website hosting platform may retain standard technical logs that are beyond the control of this form; accordingly, absolute anonymity cannot be guaranteed. All submissions are handled in accordance with the Data Privacy Act of 2012 (Republic Act No. 10173) and applicable university policies.</p>
-        </div>
+        <section class="section" aria-labelledby="types-title">
+          <h2 class="section-title" id="types-title">What would you like to submit?</h2>
+          <p class="section-sub">Choose a type to begin. It will be selected for you on the form.</p>
+          <div class="grid">
+          <article class="card">
+            <div class="card-top"><span class="thumb"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.1-.6-.6-2.1z"/></svg></span><h3>Service Request</h3></div>
+            <p>Formal requests for assistance or services from the College.</p>
+            <a class="btn" href="#form" data-type="Service Request">Submit a request</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><span class="thumb"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></span><h3>Suggestion</h3></div>
+            <p>Proposals to improve programs, facilities, or activities.</p>
+            <a class="btn" href="#form" data-type="Suggestion">Share a suggestion</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><span class="thumb"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></span><h3>Feedback</h3></div>
+            <p>Comments on existing services and student experiences.</p>
+            <a class="btn" href="#form" data-type="Feedback">Give feedback</a>
+          </article>
+          <article class="card">
+            <div class="card-top"><span class="thumb"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span><h3>Concern or Complaint</h3></div>
+            <p>Matters that require attention or resolution.</p>
+            <a class="btn" href="#form" data-type="Concern or Complaint">Report a concern</a>
+          </article>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="privacy-title">
+          <h2 class="section-title" id="privacy-title">Your privacy</h2>
+          <p class="section-sub">How your submission is handled.</p>
+          <div class="grid">
+          <article class="card info">
+            <div class="card-top"><span class="thumb"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><h3>Anonymous Submission</h3></div>
+            <p>No name or contact information is requested or recorded when you submit anonymously.</p>
+          </article>
+          <article class="card info">
+            <div class="card-top"><span class="thumb"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/></svg></span><h3>Voluntary Disclosure</h3></div>
+            <p>Provide as much or as little personal information as you wish. All contact fields are optional.</p>
+          </article>
+          <article class="card info">
+            <div class="card-top"><span class="thumb"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3>Authorized Review</h3></div>
+            <p>Submissions are accessible only to designated CET Student Council officers and administrators.</p>
+          </article>
+          </div>
+          <p class="note"><strong>Data Privacy Notice.</strong> Anonymity under this system means that no identifying or contact information is requested or stored by the application. The website hosting platform may retain standard technical logs that are beyond the control of this form; accordingly, absolute anonymity cannot be guaranteed. All submissions are handled in accordance with the Data Privacy Act of 2012 (Republic Act No. 10173) and applicable university policies.</p>
+        </section>
       </div>
     </section>
 
     <!-- ========== FORM PAGE ========== -->
     <section id="view-form" class="view" hidden aria-labelledby="form-title">
       <div class="wrap form-wrap">
-        <div class="card panel" id="formCard">
+        <div class="panel" id="formCard">
           <h2 id="form-title" tabindex="-1">Submit a concern</h2>
           <p class="hint">Takes about two minutes. No login needed. Fields marked <span class="req" aria-hidden="true">*</span><span class="sr"> with an asterisk</span> are required.</p>
 
@@ -123,6 +140,11 @@
                     <option>Other</option>
                   </select>
                   <span class="err" id="type-err"></span>
+                  <div class="field other-field" id="typeOtherWrap" hidden>
+                  <label for="typeOther">Please specify the type <span class="optional">(optional)</span></label>
+                  <input type="text" id="typeOther" name="typeOther" maxlength="60" aria-describedby="typeOther-err" placeholder="e.g. Partnership proposal">
+                  <span class="err" id="typeOther-err"></span>
+                </div>
                 </div>
                 <div class="field">
                   <label for="category">Category <span class="req" aria-hidden="true">*</span></label>
@@ -138,16 +160,11 @@
                     <option>Other</option>
                   </select>
                   <span class="err" id="category-err"></span>
-                </div>
-                <div class="field" id="typeOtherWrap" hidden>
-                  <label for="typeOther">Please specify the type <span class="optional">(optional)</span></label>
-                  <input type="text" id="typeOther" name="typeOther" maxlength="60" aria-describedby="typeOther-err" placeholder="e.g. Partnership proposal">
-                  <span class="err" id="typeOther-err"></span>
-                </div>
-                <div class="field" id="categoryOtherWrap" hidden>
+                  <div class="field other-field" id="categoryOtherWrap" hidden>
                   <label for="categoryOther">Please specify the category <span class="optional">(optional)</span></label>
                   <input type="text" id="categoryOther" name="categoryOther" maxlength="60" aria-describedby="categoryOther-err" placeholder="e.g. Library services">
                   <span class="err" id="categoryOther-err"></span>
+                </div>
                 </div>
               </div>
 
@@ -213,11 +230,11 @@
                       <option>Other</option>
                     </select>
                     <span class="err" id="program-err"></span>
-                  </div>
-                  <div class="field" id="programOtherWrap" hidden>
+                  <div class="field other-field" id="programOtherWrap" hidden>
                     <label for="programOther">Please specify <span class="optional">(optional)</span></label>
                     <input type="text" id="programOther" name="programOther" maxlength="100" aria-describedby="programOther-err" placeholder="Your program or department">
                     <span class="err" id="programOther-err"></span>
+                  </div>
                   </div>
                   <div class="field">
                     <label for="yearLevel">Year level</label>
@@ -260,7 +277,7 @@
           </form>
         </div>
 
-        <div class="card panel success" id="successCard" hidden tabindex="-1" aria-live="polite">
+        <div class="panel success" id="successCard" hidden tabindex="-1" aria-live="polite">
         <div class="check-mark" aria-hidden="true">&#10003;</div>
         <h2>Submission received</h2>
         <p>Thank you. Your submission was saved and will be reviewed by authorized CET personnel.</p>
@@ -275,13 +292,15 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>CET e-SERVE &middot; College of Engineering and Technology, Tarlac Agricultural University, Camiling, Tarlac</p>
-      <p>Project by Councilor Jomar Gambol</p>
+  <footer class="footer">
+    <div class="wrap foot">
+    <div>
+      <strong>CET e-SERVE</strong> | Electronic Service: Request, Suggestion &amp; Feedback Form 
     </div>
+    <p class="copy">© <span id="year"></span> College of Engineering and Technology, Tarlac Agricultural University.</p>
+  </div>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
